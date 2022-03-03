@@ -1,0 +1,33 @@
+version: 1 #templates version
+repositories:
+    - repoType: local
+      name:   dev-prod-stage #The local repository name
+      type: docker #maven | gradle | ivy | helm | sbt | nuget | gems | npm | bower | debian | composer | pypi | docker | vagrant | gitlfs | yum | conan | chef | puppet | generic   #The package type
+      description: "creating a basic docker based repository"   #A free text field that describes the content and purpose of the repository
+      dockerApiVersion: V1 | V2   #Only for Docker repositories. The Docker API version)
+      notes: "Hello world 2"   #A free text field to add additional notes about the repository
+      propertySets:   #A list of property sets that will be defined for this repository
+        - set1
+        - set2
+      repoLayout: maven-2-default   #Sets the layout that the repository should use for storing and identifying modules. The layout usually varies for the different package types
+      xray:   #Xray settings for the certain repository
+        enabled: false   #Indicated whether the repository will be indexed and scanned by Xray
+        template: <<FILE_NAME>> #File name to be specified for using xray template
+        id: #xray template id to be used
+
+    - repoType: local #repository name
+      name: dev-dep-stage
+      user: <USER_NAME> #user name for remote repository
+      password: <PASSWORD> #Password for remote repository
+      type: maven #maven | gradle | ivy | helm | sbt | nuget | gems | npm | bower | debian | composer | pypi | docker | vagrant | gitlfs | yum | conan | chef | puppet | generic   #The package type
+      description: "creating a basic maven based repository"   #A free text field that describes the content and purpose of the repository
+      dockerApiVersion: V1 | V2   #Only for Docker repositories. The Docker API version)
+      notes: "Hello world 2"   #A free text field to add additional notes about the repository
+      propertySets: #A list of property sets that will be defined for this repository
+        - set1
+        - set2
+      repoLayout: maven-2-default   #Sets the layout that the repository should use for storing and identifying modules. The layout usually varies for the different package types
+      xray: #Xray settings for the certain repository
+        enabled: false   #Indicated whether the repository will be indexed and scanned by Xray
+        template: <<FILE_NAME>> #File name to be specified for using xray template
+        id: #xray template id to be used

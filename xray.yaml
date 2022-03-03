@@ -1,0 +1,9 @@
+version: 1 #Version numbers for xray templates
+xray:
+  - id: 1 #id for
+    name: sec_policy #xray policy name
+    description: This is a security policy #Description for the policy
+    type: security #Type of policy
+    rules: # list of rules for
+      - sec_rule
+      - sec_rule_1
